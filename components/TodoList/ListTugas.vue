@@ -252,7 +252,6 @@ export default {
             detail:{
                 task: null,
                 priority: null,
-                task: null
             }
         };
     },
