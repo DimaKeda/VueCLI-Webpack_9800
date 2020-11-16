@@ -2,8 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
-
-function importComponent(path){
+function importComponent(path) {
     return () => import(`./components/${path}.vue`)
 }
 
@@ -17,21 +16,36 @@ const router = new VueRouter({
             name: "admin",
             component: importComponent('DashboardLayout'),
             children: [
-                // Dashboard
+
+                //Dashboard
                 {
                     path: "/",
                     name: "Root",
                     component: importComponent('Dashboard'),
                 },
-                // To do List
+
+                // To do list
                 {
                     path: "/gd",
                     name: "Guided",
                     component: importComponent('TodoList/List'),
                 },
+
+                // To do list UGD
+                {
+                    path: "/ugd",
+                    name: "Unguided",
+                    component: importComponent('TodoList/ListUGD'),
+                },
+
+                // To do list Tugas
+                {
+                    path: "/tugas",
+                    name: "tugas",
+                    component: importComponent('TodoList/ListTugas'),
+                },
             ]
         },
-    ]
+    ],
 });
-
 export default router;

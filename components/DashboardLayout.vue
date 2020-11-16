@@ -1,9 +1,9 @@
 <template>
     <div class="dashboard">
-        <v-navigation-drawer class="fullheight" width="256" permanent app fixed>
+        <v-navigation-drawer width="256" permanent app fixed>
             <v-list-item>
                 <v-list-item-content>
-                    <v-list-item-title class="title">
+                    <v-list-item-title>
                         Dima Averil Keda
                     </v-list-item-title>
                     <v-list-item-subtitle>
@@ -23,16 +23,12 @@
                     :to="item.to"
                 >
                     <v-list-item-content>
-                        <v-list-item-title>
-                            {{ item.title }}
-                        </v-list-item-title>
+                        <v-list-item-title>{{ item.title }}</v-list-item-title>
                     </v-list-item-content>
-
                 </v-list-item>
             </v-list>
-
         </v-navigation-drawer>
-        <div  class="grey lighten-4 fullheight pa-5">
+        <div class="grey darken-4 fullheight pa-10">
             <router-view></router-view>
         </div>
     </div>
@@ -40,18 +36,20 @@
 <script>
 export default {
     name: "Dashboard",
-    data(){
-        return{
+    data() {
+    return {
             items: [
                 { title: "Dashboard", to: "/" },
                 { title: "GD", to: "/gd" },
+                { title: "UGD", to: "/ugd" },
+                { title: "Tugas", to: "/tugas" },
             ],
         };
     },
 };
 </script>
 <style scoped>
-.fullheight{
+.fullheight {
     min-height: 100vh !important;
 }
 </style>
